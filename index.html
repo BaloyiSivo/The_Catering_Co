@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Catering Co | Premium Catering Services</title>
+
+<meta name="description"
+content="The Catering Co provides premium catering for weddings, birthdays, corporate events and special occasions.">
+
+<style>
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background: #fff;
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --primary: #b8860b;
+    --dark: #151515;
+    --dark2: #222;
+    --cream: #f8f4ec;
+    --white: #fff;
+    --gray: #777;
+    --light: #f5f5f5;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 18px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(15, 15, 15, 0.94);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-btn {
+    background: var(--primary);
+    color: white !important;
+    padding: 10px 18px;
+    border-radius: 25px;
+}
+
+.menu-toggle {
+    display: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+        url("https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    display: flex;
+    align-items: center;
+    padding: 120px 7% 80px;
+    color: white;
+}
+
+.hero-content {
+    max-width: 760px;
+    animation: fadeUp 1s ease;
+}
+
+.badge {
+    display: inline-block;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 85px);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero p {
+    font-size: 19px;
+    max-width: 650px;
+    color: #eee;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 25px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    background: #d39d0a;
+}
+
+.btn-outline {
+    border: 1px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #111;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+section {
+    padding: 90px 7%;
+}
+
+.section-title {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.section-title span {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 42px;
+    margin: 8px 0 15px;
+}
+
+.section-title p {
+    color: var(--gray);
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.experience {
+    position: absolute;
+    right: -20px;
+    bottom: 25px;
+    background: var(--primary);
+    color: white;
+    padding: 22px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0,0,0,.2);
+}
+
+.experience strong {
+    display: block;
+    font-size: 32px;
+}
+
+.about-text h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #666;
+    margin-bottom: 18px;
+}
+
+.check-list {
+    list-style: none;
+    margin: 25px 0;
+}
+
+.check-list li {
+    margin-bottom: 12px;
+}
+
+.check-list li::before {
+    content: "✓";
+    color: var(--primary);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+    background: var(--cream);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px 22px;
+    border-radius: 18px;
+    text-align: center;
+    transition: .3s;
+    border: 1px solid #eee;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.1);
+}
+
+.service-icon {
+    width: 65px;
+    height: 65px;
+    margin: auto;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #f6ecd0;
+    font-size: 30px;
+}
+
+.service-card h3 {
+    margin: 18px 0 10px;
+}
+
+.service-card p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* =========================
+   PACKAGES
+========================= */
+
+.packages {
+    background: #fff;
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.package {
+    border: 1px solid #eee;
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+    transition: .3s;
+}
+
+.package:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 40px rgba(0,0,0,.1);
+}
+
+.package-image {
+    height: 220px;
+    object-fit: cover;
+}
+
+.package-content {
+    padding: 28px;
+}
+
+.package-content h3 {
+    font-size: 24px;
+}
+
+.price {
+    color: var(--primary);
+    font-size: 26px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.package-content ul {
+    list-style: none;
+    color: #666;
+    margin: 20px 0;
+}
+
+.package-content li {
+    margin-bottom: 8px;
+}
+
+.package-content li::before {
+    content: "✓ ";
+    color: var(--primary);
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+    background: var(--dark);
+}
+
+.gallery .section-title h2,
+.gallery .section-title p {
+    color: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 12px;
+    height: 260px;
+}
+
+.gallery-item img {
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+/* =========================
+   TESTIMONIALS
+========================= */
+
+.testimonials {
+    background: var(--cream);
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.testimonial {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+}
+
+.stars {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.testimonial p {
+    color: #666;
+    font-style: italic;
+}
+
+.customer {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote {
+    background:
+        linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
+        url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    color: white;
+}
+
+.quote-container {
+    max-width: 850px;
+    margin: auto;
+}
+
+.quote .section-title h2,
+.quote .section-title p {
+    color: white;
+}
+
+.form {
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(10px);
+    padding: 35px;
+    border-radius: 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+}
+
+.form input,
+.form select,
+.form textarea {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background: white;
+    color: #222;
+}
+
+.form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.contact-card {
+    padding: 30px;
+    border-radius: 15px;
+    background: var(--cream);
+    text-align: center;
+}
+
+.contact-card .icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.contact-card h3 {
+    margin-bottom: 5px;
+}
+
+.contact-card p {
+    color: #666;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #111;
+    color: white;
+    padding: 45px 7% 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 35px;
+}
+
+footer h3 {
+    margin-bottom: 15px;
+}
+
+footer p,
+footer a {
+    color: #aaa;
+    font-size: 14px;
+}
+
+footer a {
+    display: block;
+    margin-bottom: 8px;
+}
+
+footer a:hover {
+    color: var(--primary);
+}
+
+.copyright {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
+    color: #777;
+    font-size: 13px;
+}
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25D366;
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 28px;
+    z-index: 999;
+    box-shadow: 0 8px 25px rgba(0,0,0,.25);
+    animation: pulse 2s infinite;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37,211,102,.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 18px rgba(37,211,102,0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37,211,102,0);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .package-grid,
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+
+    section {
+        padding: 70px 5%;
+    }
+
+    .navbar {
+        padding: 16px 5%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #111;
+        display: none;
+        flex-direction: column;
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        padding: 120px 5% 70px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .section-title h2,
+    .about-text h2 {
+        font-size: 32px;
+    }
+
+    .service-grid,
+    .gallery-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 280px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full {
+        grid-column: auto;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .experience {
+        right: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header class="navbar">
+
+    <a href="#home" class="logo">
+        The Catering Co<span>Catering</span>
+    </a>
+
+    <div class="menu-toggle" id="menuToggle">
+        ☰
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+            <a href="#quote" class="nav-btn">Get a Quote</a>
+        </li>
+    </ul>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            PREMIUM CATERING SERVICES
+        </div>
+
+        <h1>
+            Delicious Food.<br>
+            <span>Beautiful Moments.</span>
+        </h1>
+
+        <p>
+            Professional catering for weddings, birthdays,
+            corporate events and unforgettable celebrations.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#quote" class="btn btn-primary">
+                Request a Quote
+            </a>
+
+            <a href="#packages" class="btn btn-outline">
+                View Packages
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="about">
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1000&q=85"
+                alt="Professional catering">
+
+            <div class="experience">
+                <strong>8+</strong>
+                Years Experience
+            </div>
+
+        </div>
+
+        <div class="about-text">
+
+            <span style="color:#b8860b;font-weight:bold;">
+                ABOUT US
+            </span>
+
+            <h2>
+                We Turn Events Into Memories
+            </h2>
+
+            <p>
+                At The Catering Co, we believe great food brings
+                people together. Our team prepares delicious,
+                beautifully presented meals for events of all sizes.
+            </p>
+
+            <p>
+                From intimate family celebrations to large corporate
+                events, we handle the food so you can enjoy your
+                special occasion.
+            </p>
+
+            <ul class="check-list">
+
+                <li>Fresh ingredients</li>
+                <li>Professional service</li>
+                <li>Custom menus</li>
+                <li>Reliable event catering</li>
+
+            </ul>
+
+            <a href="#quote" class="btn btn-primary">
+                Plan Your Event
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="services" id="services">
+
+    <div class="section-title">
+
+        <span>WHAT WE DO</span>
+
+        <h2>
+            Catering For Every Occasion
+        </h2>
+
+        <p>
+            Whatever you're celebrating, we'll make sure
+            your guests leave happy and satisfied.
+        </p>
+
+    </div>
+
+    <div class="service-grid">
+
+        <div class="service-card">
+
+            <div class="service-icon">💍</div>
+
+            <h3>Weddings</h3>
+
+            <p>
+                Elegant catering packages designed
+                for your special day.
+            </p>
+
+        </div>
+
+        <div class="service-card">
+
+            <div class="service-icon">🎂</div>
+
+            <h3>Birthdays</h3>
+
+            <p>
+                Delicious food and professional service
+                for birthday celebrations.
+            </p>
+
+        </div>
+
+        <div class="service-card">
+
+            <div class="service-icon">💼</div>
+
+            <h3>Corporate</h3>
+
+            <p>
+                Professional catering for meetings,
+                conferences and company events.
+            </p>
+
+        </div>
+
+        <div class="service-card">
+
+            <div class="service-icon">🎉</div>
+
+            <h3>Special Events</h3>
+
+            <p>
+                Custom catering for parties,
+                family gatherings and celebrations.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PACKAGES
+========================= -->
+
+<section id="packages" class="packages">
+
+    <div class="section-title">
+
+        <span>OUR MENU</span>
+
+        <h2>
+            Popular Catering Packages
+        </h2>
+
+        <p>
+            Choose a package or contact us for a
+            completely customised menu.
+        </p>
+
+    </div>
+
+    <div class="package-grid">
+
+        <div class="package">
+
+            <img
+                class="package-image"
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85"
+                alt="Basic catering">
+
+            <div class="package-content">
+
+                <h3>Classic Package</h3>
+
+                <div class="price">
+                    From R550 pp
+                </div>
+
+                <ul>
+                    <li>2 Main dishes</li>
+                    <li>2 Side dishes</li>
+                    <li>Fresh salad</li>
+                    <li>Professional setup</li>
+                </ul>
+
+                <a href="#quote" class="btn btn-primary">
+                    Choose Package
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="package">
+
+            <img
+                class="package-image"
+                src="https://images.unsplash.com/photo-1543353071-10c8ba85a904?auto=format&fit=crop&w=900&q=85"
+                alt="Premium catering">
+
+            <div class="package-content">
+
+                <h3>Premium Package</h3>
+
+                <div class="price">
+                    From R850 pp
+                </div>
+
+                <ul>
+                    <li>3 Main dishes</li>
+                    <li>3 Side dishes</li>
+                    <li>2 Fresh salads</li>
+                    <li>Dessert selection</li>
+                    <li>Professional setup</li>
+                </ul>
+
+                <a href="#quote" class="btn btn-primary">
+                    Choose Package
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="package">
+
+            <img
+                class="package-image"
+                src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=85"
+                alt="Luxury catering">
+
+            <div class="package-content">
+
+                <h3>Luxury Package</h3>
+
+                <div class="price">
+                    From R1500 pp
+                </div>
+
+                <ul>
+                    <li>Premium main dishes</li>
+                    <li>Multiple side dishes</li>
+                    <li>Starter selection</li>
+                    <li>Dessert table</li>
+                    <li>Waiter service</li>
+                </ul>
+
+                <a href="#quote" class="btn btn-primary">
+                    Choose Package
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section class="gallery" id="gallery">
+
+    <div class="section-title">
+
+        <span>OUR WORK</span>
+
+        <h2>Food Worth Celebrating</h2>
+
+        <p>
+            A taste of what we can bring to your event.
+        </p>
+
+    </div>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item">
+            <img
+                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=85"
+                alt="Food">
+        </div>
+
+        <div class="gallery-item">
+            <img
+                src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=900&q=85"
+                alt="Healthy food">
+        </div>
+
+        <div class="gallery-item">
+            <img
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85"
+                alt="Catering food">
+        </div>
+
+        <div class="gallery-item">
+            <img
+                src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=85"
+                alt="Fresh salad">
+        </div>
+
+        <div class="gallery-item">
+            <img
+                src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=85"
+                alt="Grilled food">
+        </div>
+
+        <div class="gallery-item">
+            <img
+                src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=900&q=85"
+                alt="Pasta">
+        </div>
+
+        <div class="gallery-item">
+            <img
+                src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=85"
+                alt="Dessert">
+        </div>
+
+        <div class="gallery-item">
+            <img
+                src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=900&q=85"
+                alt="Food preparation">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TESTIMONIALS
+========================= -->
+
+<section class="testimonials">
+
+    <div class="section-title">
+
+        <span>CLIENT LOVE</span>
+
+        <h2>What Our Customers Say</h2>
+
+    </div>
+
+    <div class="testimonial-grid">
+
+        <div class="testimonial">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "The food was absolutely amazing. Our guests
+                couldn't stop talking about it!"
+            </p>
+
+            <div class="customer">
+                — Thandi M.
+            </div>
+
+        </div>
+
+        <div class="testimonial">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "Professional from start to finish. Everything
+                was beautifully presented."
+            </p>
+
+            <div class="customer">
+                — Sipho K.
+            </div>
+
+        </div>
+
+        <div class="testimonial">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "They made our wedding stress-free. The food,
+                service and presentation were excellent."
+            </p>
+
+            <div class="customer">
+                — Lerato & Kabelo
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     QUOTE FORM
+========================= -->
+
+<section class="quote" id="quote">
+
+    <div class="quote-container">
+
+        <div class="section-title">
+
+            <span>GET STARTED</span>
+
+            <h2>Request A Catering Quote</h2>
+
+            <p>
+                Tell us about your event and we'll contact you
+                with a personalised quotation.
+            </p>
+
+        </div>
+
+        <form class="form" id="quoteForm">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>Your Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Phone Number</label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Phone Number"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Event Type</label>
+
+                    <select id="eventType" required>
+
+                        <option value="">
+                            Select event
+                        </option>
+
+                        <option>Wedding</option>
+                        <option>Birthday</option>
+                        <option>Corporate Event</option>
+                        <option>Funeral</option>
+                        <option>Baby Shower</option>
+                        <option>Private Party</option>
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Number of Guests</label>
+
+                    <input
+                        type="number"
+                        id="guests"
+                        placeholder="e.g. 100"
+                        min="1"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Event Date</label>
+
+                    <input
+                        type="date"
+                        id="date"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Package</label>
+
+                    <select id="package">
+
+                        <option>Classic Package</option>
+                        <option>Premium Package</option>
+                        <option>Luxury Package</option>
+                        <option>Custom Package</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group full">
+
+                    <label>Tell us about your event</label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Tell us anything important about your event..."></textarea>
+
+                </div>
+
+                <div class="form-group full">
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        style="width:100%;">
+
+                        Send Quote Request on WhatsApp
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="section-title">
+
+        <span>CONTACT US</span>
+
+        <h2>Let's Plan Your Event</h2>
+
+    </div>
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+
+            <div class="icon">📞</div>
+
+            <h3>Call Us</h3>
+
+            <p>079 446 6466</p>
+
+        </div>
+
+        <div class="contact-card">
+
+            <div class="icon">📧</div>
+
+            <h3>Email</h3>
+
+            <p>info@catering.co.za</p>
+
+        </div>
+
+        <div class="contact-card">
+
+            <div class="icon">📍</div>
+
+            <h3>Location</h3>
+
+            <p>Giyani, Limpopo</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <div class="logo">
+                The Catering Co<span>Catering</span>
+            </div>
+
+            <p style="margin-top:15px;">
+                Delicious food. Professional service.
+                Beautiful memories.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#packages">Packages</a>
+
+        </div>
+
+        <div>
+
+            <h3>Contact</h3>
+
+            <a href="tel:0794466466">
+                079 446 6466
+            </a>
+
+            <a href="mailto:info@catering.co.za">
+                info@catering.co.za
+            </a>
+
+            <a href="#quote">
+                Request a Quote
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        © <span id="year"></span> The Catering Co.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     WHATSAPP BUTTON
+========================= -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/27794466466?text=Hi%20The Catering Co.%20Catering,%20I%20would%20like%20to%20request%20a%20catering%20quote."
+    target="_blank"
+    aria-label="Chat on WhatsApp">
+
+    💬
+
+</a>
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+});
+
+
+/* Close mobile menu after clicking */
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
+
+
+/* =========================
+   CURRENT YEAR
+========================= */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+/* =========================
+   QUOTE FORM
+========================= */
+
+const quoteForm = document.getElementById("quoteForm");
+
+quoteForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("name").value;
+
+    const phone =
+        document.getElementById("phone").value;
+
+    const eventType =
+        document.getElementById("eventType").value;
+
+    const guests =
+        document.getElementById("guests").value;
+
+    const date =
+        document.getElementById("date").value;
+
+    const packageName =
+        document.getElementById("package").value;
+
+    const message =
+        document.getElementById("message").value;
+
+
+    const whatsappMessage =
+`Hello The Catering Co. 👋
+
+I would like to request a catering quote.
+
+Name: ${name}
+Phone: ${phone}
+Event: ${eventType}
+Number of Guests: ${guests}
+Event Date: ${date}
+Package: ${packageName}
+
+Additional Information:
+${message}
+
+Please send me a quotation. Thank you!`;
+
+
+    /*
+       CHANGE THIS NUMBER TO YOUR CLIENT'S
+       WHATSAPP NUMBER.
+
+       Format:
+       South Africa:
+       27 + number without the first 0
+
+       Example:
+       0712345678
+       becomes:
+       27712345678
+    */
+
+    const businessNumber = "27794466466";
+
+    const whatsappURL =
+        `https://wa.me/${businessNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+
+    window.open(whatsappURL, "_blank");
+
+});
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const revealElements =
+    document.querySelectorAll(
+        ".service-card, .package, .testimonial, .contact-card, .gallery-item"
+    );
+
+const observer = new IntersectionObserver(
+    entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.style.animation =
+                    "fadeUp .7s ease forwards";
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+
+revealElements.forEach(element => {
+
+    element.style.opacity = "0";
+
+    observer.observe(element);
+
+});
+
+</script>
+
+</body>
+</html>
